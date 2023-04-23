@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Checker in Node.js & Express</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class=""text-center>
+            Internet Speed Tester in Javascript
+        </h1>
+
+        <button onclick="speedtest()" class="btn btn-danger btn-block">Check Internet Speed</button>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+function speedtest(){
+
+$.ajax({
+    method:'GET',
+    url:'/getspeed',
+    success:function(data){
+        console.log(data)
+    }
+
+})
+}
+</script>
+</html>
